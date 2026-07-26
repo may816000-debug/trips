@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>象外 — 比利时当代艺术展 · 出行计划</title>
+<meta name="theme-color" content="#0A0A0A">
+<style>
+/* ═══ RESET & FOUNDATIONS ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0A;--paper:#F4F2EE;--gold:#D4A017;--rust:#B5452C;
+  --stone:#E0DCD5;--mist:#9B9690;--charcoal:#2A2826;
+  --font-sans:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --font-serif:'PingFang SC','STSong','Songti SC','Noto Serif SC',serif;
+}
+html{background:var(--paper);scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);background:var(--paper);color:var(--charcoal);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  font-weight:400;
+}
+
+/* ═══ NAVIGATION ═══ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(244,242,238,.85);backdrop-filter:blur(12px);
+  padding:14px 28px;display:flex;justify-content:space-between;
+  font-size:.72rem;letter-spacing:.12em;font-weight:500;color:var(--charcoal);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+
+/* ═══ HERO — Gallery Wall ═══ */
+.masthead{
+  margin:0 20px;padding:120px 0 72px;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.masthead .classification{
+  font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;margin-bottom:28px;
+}
+.masthead h1{
+  font-family:var(--font-serif);font-size:clamp(3rem,7vw,5.2rem);
+  font-weight:300;line-height:1.05;letter-spacing:-.02em;
+  color:var(--ink);max-width:14em;
+}
+.masthead h1 .line2{display:block;font-size:.28em;font-weight:400;letter-spacing:.18em;
+  color:var(--mist);margin-top:.8em;font-family:var(--font-sans);text-transform:uppercase}
+.masthead .dateline{
+  display:flex;gap:48px;margin-top:40px;font-size:.72rem;letter-spacing:.1em;
+  color:var(--mist);font-weight:400;
+}
+.masthead .dateline span{position:relative}
+.masthead .dateline span+span::before{content:'·';position:absolute;left:-26px;color:var(--mist)}
+
+/* Cover Image — CSS Geometric Composition */
+.cover{
+  margin:0 20px 48px;height:420px;background:var(--ink);position:relative;overflow:hidden;
+}
+.cover .comp-1{
+  position:absolute;top:12%;left:18%;width:28%;height:38%;
+  background:var(--rust);opacity:.85;
+}
+.cover .comp-2{
+  position:absolute;top:28%;left:38%;width:22%;height:24%;
+  border:1.5px solid var(--gold);opacity:.7;
+}
+.cover .comp-3{
+  position:absolute;top:42%;left:55%;width:30%;height:44%;
+  background:linear-gradient(135deg,var(--gold) 0%,rgba(212,160,23,.2) 100%);opacity:.35;
+}
+.cover .comp-4{
+  position:absolute;bottom:18%;left:22%;width:16%;height:6%;
+  background:rgba(255,255,255,.06);
+}
+.cover .caption{
+  position:absolute;bottom:32px;right:36px;
+  font-size:.62rem;letter-spacing:.14em;color:rgba(255,255,255,.35);
+  font-weight:400;text-align:right;line-height:1.6;
+}
+
+/* ═══ CONTENT ═══ */
+.content{max-width:780px;margin:0 auto;padding:0 20px}
+
+/* Section divider — compact where detail is needed, generous between zones */
+.rule{height:1px;background:rgba(0,0,0,.08);margin:48px 0}
+
+/* Section heading */
+.sec-label{
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rust);margin-bottom:24px;font-weight:500;
+}
+
+/* ═══ AT-A-GLANCE — compact stat strip ═══ */
+.glance{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(0,0,0,.06);
+  margin-bottom:48px;
+}
+.glance .cell{background:var(--paper);padding:20px 0;text-align:center}
+.glance .cell .figure{font-size:1.8rem;font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.glance .cell .label{font-size:.6rem;color:var(--mist);margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
+
+/* ═══ DUO: Two activities ═══ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.06);margin-bottom:48px}
+.duo .pane{background:var(--paper);padding:32px 32px 28px}
+.duo .pane .pane-num{font-size:.62rem;letter-spacing:.2em;color:var(--mist);margin-bottom:16px;font-weight:500}
+.duo .pane h3{font-size:1.2rem;font-weight:400;letter-spacing:.02em;margin-bottom:4px;color:var(--ink)}
+.duo .pane .subtitle{font-size:.74rem;color:var(--mist);font-weight:400;margin-bottom:20px}
+.duo .pane .field{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.72rem}
+.duo .pane .field .key{color:var(--mist);font-weight:400}
+.duo .pane .field .val{color:var(--charcoal);font-weight:500}
+.duo .pane .alert{
+  margin-top:20px;padding:12px 16px;background:rgba(181,69,44,.04);
+  font-size:.66rem;color:var(--rust);line-height:1.7;letter-spacing:.02em;
+}
+
+/* ═══ METRO ═══ */
+.metro-schematic{position:relative;padding:32px 0}
+.metro-schematic .leg{display:flex;align-items:center;gap:0;margin-bottom:32px;position:relative;padding-left:80px}
+.metro-schematic .leg-label{
+  position:absolute;left:0;width:64px;text-align:right;
+  font-size:.62rem;letter-spacing:.1em;color:var(--mist);font-weight:500
+}
+.metro-schematic .station{display:flex;align-items:center;gap:10px}
+.metro-schematic .station .dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
+  background:var(--charcoal);
+}
+.metro-schematic .station .dot.origin{border:2px solid var(--ink);background:var(--paper);width:14px;height:14px}
+.metro-schematic .station .dot.interchange{background:var(--gold);width:14px;height:14px}
+.metro-schematic .station .dot.dest{background:var(--rust);width:14px;height:14px}
+.metro-schematic .station .name{font-size:.72rem;font-weight:500;white-space:nowrap}
+.metro-schematic .station .name.muted{color:var(--mist);font-weight:400;font-size:.68rem}
+.metro-schematic .connector{height:1px;background:rgba(0,0,0,.1);min-width:24px;margin:0 8px;flex-shrink:0}
+.metro-schematic .leg-summary{
+  font-size:.64rem;color:var(--mist);letter-spacing:.06em;margin-left:12px
+}
+.xfer-badge{
+  display:inline-block;font-size:.6rem;letter-spacing:.14em;padding:4px 12px;
+  border:1px solid rgba(0,0,0,.15);color:var(--mist);
+  margin:20px 0 8px 80px;
+}
+
+/* ═══ TIMELINE — Grid layout, no absolute positioning ═══ */
+.timeline{
+  position:relative;
+}
+.timeline::before{
+  content:'';position:absolute;
+  left:108px;top:0;bottom:0; /* 96px time + 12px (half dot col) */
+  width:1px;background:rgba(0,0,0,.08);
+}
+.entry{
+  display:grid;grid-template-columns:96px 24px 1fr;
+  align-items:start;margin-bottom:32px;
+}
+.tl-time{
+  text-align:right;padding-right:12px;
+  font-size:.82rem;font-weight:500;color:var(--ink);
+  font-family:var(--font-serif);letter-spacing:.02em;line-height:1.4;
+}
+.tl-dot{
+  width:13px;height:13px;border-radius:50%;
+  border:2px solid var(--charcoal);background:var(--paper);
+  justify-self:center;position:relative;z-index:1;margin-top:7px;
+}
+.tl-dot.highlight{background:var(--gold);border-color:var(--gold)}
+.tl-body{padding-left:12px}
+.tl-body .action{font-size:.82rem;font-weight:500;color:var(--ink)}
+.tl-body .hint{font-size:.68rem;color:var(--mist);margin-top:3px;font-weight:400;letter-spacing:.02em}
+
+/* ═══ NOTES ═══ */
+.note{
+  border-top:1px solid rgba(0,0,0,.06);
+  padding:20px 0;font-size:.74rem;line-height:1.7;
+  display:flex;gap:16px;
+}
+.note .note-label{font-size:.6rem;letter-spacing:.16em;color:var(--rust);font-weight:500;min-width:48px}
+.note .note-text{color:var(--charcoal);font-weight:400}
+
+/* ═══ CLOSING ═══ */
+.closing{
+  text-align:center;padding:72px 0 40px;
+  font-size:.7rem;color:var(--mist);letter-spacing:.08em;line-height:2.5;font-weight:400;
+}
+.closing em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ═══ MOBILE ═══ */
+@media(max-width:640px){
+  .nav{padding:12px 16px;font-size:.68rem}
+  .masthead{margin:0 12px;padding:80px 0 48px}
+  .masthead h1{font-size:2.4rem}
+  .masthead h1 .line2{font-size:.32em}
+  .masthead .dateline{gap:20px;font-size:.66rem;flex-wrap:wrap}
+  .masthead .dateline span+span::before{left:-12px}
+  .cover{margin:0 12px 32px;height:240px}
+  .content{padding:0 12px}
+  .glance{grid-template-columns:repeat(3,1fr)}
+  .glance .cell{padding:16px 0}
+  .glance .cell:nth-child(4),.glance .cell:nth-child(5){display:none}
+  .glance .cell .figure{font-size:1.4rem}
+  .duo{grid-template-columns:1fr}
+  .duo .pane{padding:24px 20px 20px}
+  .timeline::before{left:72px}
+  .entry{grid-template-columns:60px 24px 1fr;margin-bottom:24px}
+  .tl-time{font-size:.72rem}
+  .tl-dot{margin-top:5px;width:11px;height:11px}
+  .metro-schematic .leg{padding-left:60px}
+  .metro-schematic .leg-label{width:44px;font-size:.56rem}
+  .xfer-badge{margin-left:60px}
+  .metro-schematic .connector{min-width:12px;margin:0 4px}
+  .metro-schematic .station .name{font-size:.66rem}
+  .rule{margin:32px 0}
+  .sec-label{margin-bottom:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <span>出行计划</span>
+  <span>2026.07.26</span>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="classification">中比建交 55 周年 · Hangzhou</div>
+  <h1>象外<span class="line2">The Symbiosis of Language &amp; Meaning</span></h1>
+  <div class="dateline">
+    <span>杭州英蓝中心</span>
+    <span>14 位比利时艺术家</span>
+    <span>策展：丹尼埃尔·斯吕思</span>
+    <span>7 月 30 日闭展</span>
+  </div>
+</header>
+
+<!-- COVER — CSS geometric art -->
+<div class="cover">
+  <div class="comp-1"></div>
+  <div class="comp-2"></div>
+  <div class="comp-3"></div>
+  <div class="comp-4"></div>
+  <div class="caption">Composition after Belgian Modernism<br>CSS rendering · 2026</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- GLANCE -->
+<div class="glance">
+  <div class="cell"><div class="figure">15:00</div><div class="label">出发</div></div>
+  <div class="cell"><div class="figure">~4h</div><div class="label">全程</div></div>
+  <div class="cell"><div class="figure">¥19.9</div><div class="label">门票</div></div>
+  <div class="cell"><div class="figure">7</div><div class="label">总站数</div></div>
+  <div class="cell"><div class="figure">周日</div><div class="label">展馆开放</div></div>
+</div>
+
+<!-- DUO -->
+<div class="duo">
+  <div class="pane">
+    <div class="pane-num">01 / 验光</div>
+    <h3>宝岛眼镜</h3>
+    <div class="subtitle">万塘旗舰店 · 文三路 486 号</div>
+    <div class="field"><span class="key">距离</span><span class="val">古翠路站步行 5 分钟</span></div>
+    <div class="field"><span class="key">用时</span><span class="val">约 25 分钟</span></div>
+    <div class="field"><span class="key">电话</span><span class="val">0571-81902952</span></div>
+  </div>
+  <div class="pane">
+    <div class="pane-num">02 / 艺术展</div>
+    <h3>象外 · 比利时当代艺术特展</h3>
+    <div class="subtitle">英蓝中心 Bank Tower 裙楼 · 香积寺路 350 号</div>
+    <div class="field"><span class="key">开放</span><span class="val">11:00 – 20:00</span></div>
+    <div class="field"><span class="key">门票</span><span class="val">¥19.9 · 小程序「英蓝中心」</span></div>
+    <div class="field"><span class="key">媒介</span><span class="val">绘画 / 装置 / 陶瓷</span></div>
+    <div class="alert">⚠ 7 月 30 日闭展。仅剩 4 天。周一闭馆。今日周日正常开放。</div>
+  </div>
+</div>
+
+<!-- METRO -->
+<div class="sec-label">地铁路线</div>
+
+<div class="metro-schematic">
+  <!-- Leg 1: Line 2 -->
+  <div class="leg">
+    <span class="leg-label">2 号线<br>朝阳方向</span>
+    <div class="station"><div class="dot origin"></div><span class="name">古翠路</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot"></div><span class="name muted">学院路</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot"></div><span class="name muted">沈塘桥</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot interchange"></div><span class="name">武林门</span></div>
+    <span class="leg-summary">3 站 · ~10 分钟</span>
+  </div>
+
+  <div class="xfer-badge">换乘 3 号线 · 星桥方向</div>
+
+  <!-- Leg 2: Line 3 -->
+  <div class="leg">
+    <span class="leg-label">3 号线<br>星桥方向</span>
+    <div class="station"><div class="dot interchange"></div><span class="name">武林门</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot"></div><span class="name muted">武林广场</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot"></div><span class="name muted">西湖文化广场</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot"></div><span class="name muted">潮王路</span></div>
+    <div class="connector"></div>
+    <div class="station"><div class="dot dest"></div><span class="name">香积寺 · C 口</span></div>
+    <span class="leg-summary">4 站 · ~10 分钟</span>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- TIMELINE -->
+<div class="sec-label">时间线</div>
+
+<div class="timeline">
+  <div class="entry">
+    <div class="tl-time">15:00</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
+      <div class="action">古翠路出发，步行至宝岛眼镜</div>
+      <div class="hint">文三路 486 号 · 距地铁站约 350 米</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">15:10</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="action">验光</div>
+      <div class="hint">约 25 分钟 · 可提前致电确认验光师在岗</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">15:40</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="action">古翠路站上车</div>
+      <div class="hint">2 号线朝阳方向 → 3 站至武林门</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">15:55</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="action">武林门换乘 3 号线</div>
+      <div class="hint">星桥方向 → 4 站至香积寺</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">16:10</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
+      <div class="action">抵达英蓝中心</div>
+      <div class="hint">香积寺站 C 口出 · 步行 5 分钟 · 楼下 %Arabica 可小憩</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">16:10<br>—<br>18:00</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
+      <div class="action">参观「象外」</div>
+      <div class="hint">14 位艺术家 · 从容逛约 2 小时 · 建议提前小程序购票</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">18:00</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="action">运河畔散步</div>
+      <div class="hint">京杭大运河 + 香积寺外观 · 傍晚光线最佳</div>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="tl-time">18:30</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="action">大兜路历史街区晚餐</div>
+      <div class="hint">步行 5 分钟 · 推荐江南驿 / 香积寺素斋</div>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- NOTES -->
+<div class="sec-label">备忘</div>
+
+<div class="note">
+  <span class="note-label">购票</span>
+  <span class="note-text">微信搜「英蓝中心」小程序 → 象外 · 比利时当代艺术特展 → ¥19.9。也可现场扫码。</span>
+</div>
+<div class="note">
+  <span class="note-label">验光</span>
+  <span class="note-text">宝岛眼镜万塘旗舰店。验光数据拍照留存，方便后续网上配镜。</span>
+</div>
+<div class="note">
+  <span class="note-label">倒数</span>
+  <span class="note-text">展期截至 7 月 30 日（周四）。今天是最后一个周日观展窗口。周一闭馆，勿跑空。</span>
+</div>
+
+<!-- CLOSING -->
+<footer class="closing">
+  <em>象外</em><br>
+  中比建交 55 周年<br>
+  比利时当代艺术杭州特展<br>
+  2026 年 7 月 26 日 · 周日
+</footer>
+
+</div>
+
+</body>
+</html>

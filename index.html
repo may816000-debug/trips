@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出行计划 · Trip Plans</title>
+<meta name="theme-color" content="#0A0A0A">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0A;--paper:#F4F2EE;--gold:#D4A017;--rust:#B5452C;
+  --lake:#4A7C6F;--mist:#8B8580;
+  --font:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+html{background:var(--paper)}
+body{
+  font-family:var(--font);background:var(--paper);color:var(--ink);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.container{max-width:780px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.header{padding:80px 0 48px;border-bottom:1px solid rgba(0,0,0,.08);margin-bottom:48px}
+.header h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;letter-spacing:-.02em}
+.header p{font-size:.78rem;color:var(--mist);margin-top:12px;letter-spacing:.06em;font-weight:400}
+
+/* Trip Cards */
+.trips{display:grid;gap:1px;background:rgba(0,0,0,.06);margin-bottom:64px}
+.trip{
+  background:var(--paper);padding:36px 40px;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;
+  text-decoration:none;color:inherit;transition:background .2s;
+}
+.trip:hover{background:#EDEBE6}
+.trip .meta .date{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:500;margin-bottom:6px}
+.trip .meta h2{font-size:1.3rem;font-weight:500;letter-spacing:.02em}
+.trip .meta .desc{font-size:.76rem;color:var(--mist);margin-top:4px;font-weight:400}
+.trip .arrow{font-size:1.4rem;color:var(--mist);font-weight:300}
+
+/* Footer */
+.footer{text-align:center;padding:48px 0 40px;font-size:.68rem;color:var(--mist);letter-spacing:.06em}
+
+@media(max-width:640px){
+  .header{padding:60px 0 36px;margin-bottom:32px}
+  .trip{padding:24px 20px;grid-template-columns:1fr}
+  .trip .arrow{display:none}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>出行计划</h1>
+  <p>郑总的出行档案 · 每段行程一个独立页面</p>
+</header>
+
+<div class="trips">
+  <a class="trip" href="art/">
+    <div class="meta">
+      <div class="date">2026.07.26 · 周日</div>
+      <h2>象外 · 比利时当代艺术展 + 验光</h2>
+      <div class="desc">杭州英蓝中心 · 14 位比利时艺术家 · 中比建交 55 周年</div>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+  <a class="trip" href="baoshishan/">
+    <div class="meta">
+      <div class="date">2026.07.25 · 周五</div>
+      <h2>宝石山 · 宝石流霞</h2>
+      <div class="desc">古翠路出发 · 初阳台 / 蛤蟆峰 / 保俶塔 · 含音频导览</div>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+<footer class="footer">
+  Life/trips/ · 持续更新
+</footer>
+
+</div>
+</body>
+</html>
